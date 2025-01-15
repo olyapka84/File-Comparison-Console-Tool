@@ -17,6 +17,14 @@ def main():
         help="Path to the second file."
     )
 
+    parser.add_argument(
+        "-f", "--format",
+        choices=["json", "plain"],
+        default="plain",
+        metavar="FORMAT",
+        help="set format of output (default: plain)."
+    )
+
     args = parser.parse_args()
 
     first_file = args.first_file
