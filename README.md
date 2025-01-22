@@ -70,22 +70,6 @@ Hi there! This is another exciting project in my Python learning journey. This a
     gendiff -h
     ```
 
-    Example output:
-    ```plaintext
-    usage: gendiff [-h] [-f FORMAT] first_file second_file
-
-    Compares two configuration files and shows a difference.
-
-    positional arguments:
-      first_file         Path to the first file.
-      second_file        Path to the second file.
-
-    optional arguments:
-      -h, --help         Show this help message and exit.
-      -f FORMAT, --format FORMAT
-                         Set format of output (default: plain).
-    ```
-
     ### Optional Arguments:
     - Use the `-f` or `--format` flag to specify the output format:
       - `plain` (default)
