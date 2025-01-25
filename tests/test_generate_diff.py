@@ -3,9 +3,9 @@ from gendiff.generate_diff import generate_diff
 
 
 def test_generate_diff_with_json_files():
-    file1_path = "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json"
-    file2_path = "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"
-    expected_path = "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/expected_gendiff.txt"
+    file1_path = "tests/test_data/file1.json"
+    file2_path = "tests/test_data/file2.json"
+    expected_path = "tests/test_data/expected_gendiff.txt"
     with open(expected_path, "r") as file:
         expected = file.read()
 
