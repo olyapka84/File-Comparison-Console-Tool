@@ -7,11 +7,11 @@ def read_json(file_path):
     return data
 
 
-#file1_path = "/Users/olgaakukina/PycharmProjects/python-project-50/test_data/file1.json"
-#file2_path = "/Users/olgaakukina/PycharmProjects/python-project-50/test_data/file2.json"
+# file1_path = "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json"
+# file2_path = "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"
 
-#file1_data = read_json(file1_path)
-#file2_data = read_json(file2_path)
+# file1_data = read_json(file1_path)
+# file2_data = read_json(file2_path)
 
 
 def generate_diff(file_path1, file_path2):
@@ -38,4 +38,4 @@ def generate_diff(file_path1, file_path2):
     formatted_diff = "{\n" + "\n".join(f"  {line}" for line in diff) + "\n}"
     return formatted_diff
 
-#print(generate_diff(file1_path, file2_path))
+# print(generate_diff(file1_path, file2_path))
