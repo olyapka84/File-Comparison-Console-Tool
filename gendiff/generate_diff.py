@@ -1,4 +1,5 @@
 import json
+import yaml
 
 
 def read_json(file_path):
@@ -7,8 +8,17 @@ def read_json(file_path):
     return data
 
 
+def read_yaml(file_path):
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    return data
+
+
 def generate_diff(file_path1, file_path2):
-    file1, file2 = read_json(file_path1), read_json(file_path2)
+    if file_path1.endswith('.json'):
+        file1, file2 = read_json(file_path1), read_json(file_path2)
+    else:
+        file1, file2 = read_yaml(file_path1), read_yaml(file_path2)
     added = {key: file2[key] for key in file2.keys() - file1.keys()}
     removed = {key: file1[key] for key in file1.keys() - file2.keys()}
     modified = {key: (file1[key], file2[key]) for key in file1.keys() & file2.keys() if file1[key] != file2[key]}
@@ -30,3 +40,9 @@ def generate_diff(file_path1, file_path2):
 
     formatted_diff = "{\n" + "\n".join(f"  {line}" for line in diff) + "\n}"
     return formatted_diff
+
+# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
+# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
+
+# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
+# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"))

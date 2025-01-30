@@ -11,5 +11,14 @@ def test_generate_diff_with_json_files():
     assert expected == generate_diff(file1_path, file2_path)
 
 
+def test_generate_diff_with_yaml_files():
+    file1_path = "tests/test_data/file1.yaml"
+    file2_path = "tests/test_data/file2.yaml"
+    expected_path = "tests/test_data/expected_gendiff.txt"
+    with open(expected_path, "r") as file:
+        expected = file.read()
+
+    assert expected == generate_diff(file1_path, file2_path)
+
 def test_gendiff_py():
     pass
