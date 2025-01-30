@@ -20,5 +20,6 @@ def test_generate_diff_with_yaml_files():
 
     assert expected == generate_diff(file1_path, file2_path)
 
+
 def test_gendiff_py():
     pass
