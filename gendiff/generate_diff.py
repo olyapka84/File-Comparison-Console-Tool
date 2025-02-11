@@ -28,8 +28,8 @@ def generate_diff(file_path1, file_path2):
     formatted_diff = "{\n" + "\n".join(f"  {line}" for line in diff) + "\n}"
     return formatted_diff
 
-#print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
-#"/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
+# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
+# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
 
 # print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
 # "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"))
