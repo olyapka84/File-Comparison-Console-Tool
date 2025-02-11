@@ -1,17 +1,4 @@
-import json
-import yaml
-
-
-def read_json(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
-
-
-def read_yaml(file_path):
-    with open(file_path, 'r') as file:
-        data = yaml.safe_load(file)
-    return data
+from parse import read_json, read_yaml
 
 
 def generate_diff(file_path1, file_path2):
@@ -41,8 +28,8 @@ def generate_diff(file_path1, file_path2):
     formatted_diff = "{\n" + "\n".join(f"  {line}" for line in diff) + "\n}"
     return formatted_diff
 
-# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
-# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
+print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
+"/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
 
 # print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
 # "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"))
