@@ -1,35 +1,17 @@
-from gendiff.parse import read_json, read_yaml
+from gendiff.buid_diff import build_diff
+from gendiff.parse import return_dict
+from gendiff.formats.stylish import format_stylish
 
 
-def generate_diff(file_path1, file_path2):
-    if file_path1.endswith('.json'):
-        file1, file2 = read_json(file_path1), read_json(file_path2)
-    else:
-        file1, file2 = read_yaml(file_path1), read_yaml(file_path2)
-    added = {key: file2[key] for key in file2.keys() - file1.keys()}
-    removed = {key: file1[key] for key in file1.keys() - file2.keys()}
-    modified = {key: (file1[key], file2[key]) for key in file1.keys() & file2.keys() if file1[key] != file2[key]}
-    unchanged = {key: file1[key] for key in file1.keys() & file2.keys() if file1[key] == file2[key]}
+def generate_diff(file_path1, file_path2, format_name='stylish'):
+    file1, file2 = return_dict(file_path1), return_dict(file_path2)
+    diff = build_diff(file1, file2)
 
-    all_keys = sorted(set(added.keys()) | set(removed.keys()) | set(modified.keys()) | set(unchanged.keys()))
+    if format_name == "stylish":
+        return "{\n" + format_stylish(diff) + "\n}"
 
-    diff = []
-    for key in all_keys:
-        if key in removed:
-            diff.append(f"- {key}: {removed[key]}")
-        if key in added:
-            diff.append(f"+ {key}: {added[key]}")
-        if key in modified:
-            diff.append(f"- {key}: {modified[key][0]}")
-            diff.append(f"+ {key}: {modified[key][1]}")
-        if key in unchanged:
-            diff.append(f"  {key}: {unchanged[key]}")
+#print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
+#"/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
 
-    formatted_diff = "{\n" + "\n".join(f"  {line}" for line in diff) + "\n}"
-    return formatted_diff
-
-# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
-# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
-
-# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
-# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json"))
+print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
+"/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json", 'stylish'))
