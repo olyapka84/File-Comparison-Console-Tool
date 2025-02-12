@@ -17,13 +17,8 @@ Hi there! This is another exciting project in my Python learning journey. This a
 - **Beginner-Friendly**: Simple and intuitive command-line interface.
 
 ## Demonstration:
-[![asciicast](https://asciinema.org/a/I5X5T8WWtFOkgS8JBg4OVc9N1.png)](https://asciinema.org/a/I5X5T8WWtFOkgS8JBg4OVc9N1)
 
-### Comparing Files with Plain Format:
-[![asciicast](https://asciinema.org/a/someexample1.png)](https://asciinema.org/a/someexample1)
-
-### Comparing Files with JSON Format:
-[![asciicast](https://asciinema.org/a/someexample2.png)](https://asciinema.org/a/someexample2)
+[![asciicast](https://asciinema.org/a/ke06TCMpcjqfpMbqt4dZdBAXW.svg)](https://asciinema.org/a/ke06TCMpcjqfpMbqt4dZdBAXW)
 
 ## How to Install This App
 

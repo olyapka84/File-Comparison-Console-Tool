@@ -21,18 +21,15 @@ def main():
 
     parser.add_argument(
         "-f", "--format",
-        choices=["json", "plain"],
-        default="plain",
+        choices=["json", "stylish", "plain"],
+        default="stylish",
         metavar="FORMAT",
-        help="set format of output (default: plain)."
+        help="set format of output (default: stylish)."
     )
 
     args = parser.parse_args()
 
-    first_file = args.first_file
-    second_file = args.second_file
-
-    diff = generate_diff(first_file, second_file)
+    diff = generate_diff(args.first_file, args.second_file, format_name=args.format)
     print(diff)
 
 
