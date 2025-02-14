@@ -1,4 +1,4 @@
-def format_plain(diff, path = ""):
+def format_plain(diff, path=""):
     result = []
 
     for item in diff:
@@ -17,7 +17,8 @@ def format_plain(diff, path = ""):
             result.append(f"Property '{full_path}' was removed")
 
         elif type_ == 'changed':
-            result.append(f"Property '{full_path}' was updated. From {format_value(item['old_value'])} to {format_value(item['new_value'])}")
+            result.append(f"Property '{full_path}' was updated. "
+                          f"From {format_value(item['old_value'])} to {format_value(item['new_value'])}")
 
     return '\n'.join(result)
 

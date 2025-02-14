@@ -1,6 +1,6 @@
 from gendiff.buid_diff import build_diff
-from gendiff.formats.stylish import format_stylish
 from gendiff.formats.plain import format_plain
+from gendiff.formats.stylish import format_stylish
 from gendiff.parse import return_dict
 
 
