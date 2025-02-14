@@ -33,4 +33,3 @@ def format_value(value):
     if isinstance(value, (int, float)):
         return value
     return f"'{value}'"
-
