@@ -7,14 +7,14 @@
 
 ## Description
 
-Hi there! This is another exciting project in my Python learning journey. This application is a **file comparison tool** that identifies differences between two configuration files and displays them in a visually clear format. The project aims to make configuration management easier by quickly spotting discrepancies. 
+Hi! This is another project in my Python learning journey. This application is a **file comparison tool** that identifies differences between two configuration files and displays them in a visually clear format. 
 
-### Key Features:
-- **File Comparison**: Easily compare two files and see what has changed.
+### Key features:
+- **File Comparison**: Compare two files and see what has changed.
 - **Multiple Output Formats**:
+  - **Stylish**: Default format that displays differences in a tree-like structure. Each change is marked with symbols: "+" for added items, "-" for removed items, unchanged items are displayed without symbols.
   - **Plain**: Human-readable textual representation of the differences.
-  - **JSON**: Structured format suitable for further processing or integration.
-- **Beginner-Friendly**: Simple and intuitive command-line interface.
+  - **JSON**: Structured format suitable for further processing.
 
 ## Demonstration:
 
@@ -26,9 +26,13 @@ Hi there! This is another exciting project in my Python learning journey. This a
 
 [![asciicast](https://asciinema.org/a/kEpZ3fiAv363DBbQhw3EzFi5m.svg)](https://asciinema.org/a/kEpZ3fiAv363DBbQhw3EzFi5m)
 
-## How to Install This App
+### JSON format:
 
-1. **Clone the repository** (choose one of the following):
+[![asciicast](https://asciinema.org/a/XJQgVJvFlWk84wLEPPjHF7sEU.svg)](https://asciinema.org/a/XJQgVJvFlWk84wLEPPjHF7sEU)
+
+## How to install
+
+1. **Clone the repository**:
 
     - Using HTTPS:
       ```bash
@@ -40,7 +44,7 @@ Hi there! This is another exciting project in my Python learning journey. This a
       git clone git@github.com:Olyapka84/python-project-50.git
       ```
 
-    Then navigate to the project directory:
+    Navigate to the project directory:
     ```bash
     cd python-project-50
     ```
@@ -63,6 +67,10 @@ Hi there! This is another exciting project in my Python learning journey. This a
     ```bash
     gendiff path/to/first_file path/to/second_file
     ```
+    You can also specify the output format using the -f or --format option (stylish is default):
+    ```bash
+    gendiff path/to/first_file path/to/second_file -f [stylish|plain|json]
+    ```
 
 5. **View Help**:
 
@@ -70,14 +78,3 @@ Hi there! This is another exciting project in my Python learning journey. This a
     ```bash
     gendiff -h
     ```
-
-    ### Optional Arguments:
-    - Use the `-f` or `--format` flag to specify the output format:
-      - `plain` (default)
-      - `json`
-    - Example:
-      ```bash
-      gendiff file1.json file2.json -f json
-      ```
-
-Good luck and happy coding! 😊
