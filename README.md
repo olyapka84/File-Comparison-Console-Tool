@@ -28,7 +28,7 @@ Hi! This is another project in my Python learning journey. This application is a
 
 ### JSON format:
 
-[![asciicast](https://asciinema.org/a/XJQgVJvFlWk84wLEPPjHF7sEU.svg)](https://asciinema.org/a/XJQgVJvFlWk84wLEPPjHF7sEU)
+[![asciicast](https://asciinema.org/a/Bn8qmSp016ejRA1go8vGQAHk8.svg)](https://asciinema.org/a/Bn8qmSp016ejRA1go8vGQAHk8)
 
 ## How to install
 
