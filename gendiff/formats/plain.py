@@ -11,14 +11,16 @@ def format_plain(diff, path=""):
             result.append(children)
 
         elif type_ == 'added':
-            result.append(f"Property '{full_path}' was added with value: {format_value(item['value'])}")
+            result.append(f"Property '{full_path}' was added with value: "
+                          f"{format_value(item['value'])}")
 
         elif type_ == 'removed':
             result.append(f"Property '{full_path}' was removed")
 
         elif type_ == 'changed':
             result.append(f"Property '{full_path}' was updated. "
-                          f"From {format_value(item['old_value'])} to {format_value(item['new_value'])}")
+                          f"From {format_value(item['old_value'])} "
+                          f"to {format_value(item['new_value'])}")
 
     return '\n'.join(result)
 

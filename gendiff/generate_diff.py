@@ -16,7 +16,3 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
         return format_plain(diff)
     if format_name == "json":
         return json.dumps(diff, indent=4)
-
-# if __name__ == "__main__":
-    # print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
-# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml", 'plain'))
