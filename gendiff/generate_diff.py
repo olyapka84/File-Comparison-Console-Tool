@@ -1,5 +1,6 @@
 from gendiff.buid_diff import build_diff
 from gendiff.formats.stylish import format_stylish
+from gendiff.formats.plain import format_plain
 from gendiff.parse import return_dict
 
 
@@ -9,9 +10,12 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
 
     if format_name == "stylish":
         return "{\n" + format_stylish(diff) + "\n}"
+    if format_name == "plain":
+        return format_plain(diff)
 
-# print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
-# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml"))
+# if __name__ == "__main__":
+    # print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.yaml",
+# "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.yaml", 'plain'))
 
 # print(generate_diff("/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file1.json",
 # "/Users/olgaakukina/PycharmProjects/python-project-50/tests/test_data/file2.json", 'stylish'))
