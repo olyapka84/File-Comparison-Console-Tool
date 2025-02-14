@@ -30,5 +30,7 @@ def format_value(value):
         return "null"
     if isinstance(value, bool):
         return str(value).lower()
+    if isinstance(value, (int, float)):
+        return value
     return f"'{value}'"
 
