@@ -18,7 +18,13 @@ Hi there! This is another exciting project in my Python learning journey. This a
 
 ## Demonstration:
 
+### Stylish format:
+
 [![asciicast](https://asciinema.org/a/ke06TCMpcjqfpMbqt4dZdBAXW.svg)](https://asciinema.org/a/ke06TCMpcjqfpMbqt4dZdBAXW)
+
+### Plain format:
+
+[![asciicast](https://asciinema.org/a/kEpZ3fiAv363DBbQhw3EzFi5m.svg)](https://asciinema.org/a/kEpZ3fiAv363DBbQhw3EzFi5m)
 
 ## How to Install This App
 
