@@ -1,6 +1,5 @@
-import json
-
 from gendiff.buid_diff import build_diff
+from gendiff.formats.json import format_json
 from gendiff.formats.plain import format_plain
 from gendiff.formats.stylish import format_stylish
 from gendiff.parse import return_dict
@@ -15,4 +14,4 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     if format_name == "plain":
         return format_plain(diff)
     if format_name == "json":
-        return json.dumps(diff, indent=4)
+        return format_json(diff)

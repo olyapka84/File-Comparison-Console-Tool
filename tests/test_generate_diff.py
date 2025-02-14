@@ -39,3 +39,23 @@ def test_generate_diff_with_yaml_plain_format():
         expected = file.read()
 
     assert expected == generate_diff(file1_path, file2_path, "plain")
+
+
+def test_generate_diff_with_yaml_files_json_format():
+    file1_path = "tests/test_data/file1.yaml"
+    file2_path = "tests/test_data/file2.yaml"
+    expected_path = "tests/test_data/expected_gendiff_json.txt"
+    with open(expected_path, "r") as file:
+        expected = file.read()
+
+    assert expected == generate_diff(file1_path, file2_path, "json")
+
+
+def test_generate_diff_with_yaml_json_format():
+    file1_path = "tests/test_data/file1.yaml"
+    file2_path = "tests/test_data/file2.yaml"
+    expected_path = "tests/test_data/expected_gendiff_json.txt"
+    with open(expected_path, "r") as file:
+        expected = file.read()
+
+    assert expected == generate_diff(file1_path, file2_path, "json")
