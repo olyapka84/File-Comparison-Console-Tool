@@ -9,7 +9,13 @@
 
 Hi! This is another project in my Python learning journey. This application is a **file comparison console tool** that identifies differences between two configuration files and displays them in a visually clear format. 
 
-### Key features:
+## Stack:
+
+- Python
+- uv
+- Pytest
+
+## Key features:
 - **File Comparison**: Compare two files and see what has changed.
 - **Multiple Output Formats**:
   - **Stylish**: Default format that displays differences in a tree-like structure. Each change is marked with symbols: "+" for added items, "-" for removed items, unchanged items are displayed without symbols.
