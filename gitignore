@@ -1,10 +1,6 @@
 # Python
 *.pyc
 __pycache__/
-*.pyo
-*.pyd
-*.egg-info/
-*.so
 
 # Virtual environment
 .venv/
@@ -17,6 +13,7 @@ build/
 *.egg
 *.manifest
 *.spec
+hello.py
 
 # Logs and debug files
 logs/
@@ -32,17 +29,9 @@ coverage.xml
 
 # Test cache and artifacts
 .pytest_cache/
-.tox/
-noxfile.py
-nox/
-hypothesis/
 
 # IDE and editor files
-.vscode/
 .idea/
-*.swp
-*.swo
-*.bak
 
 # OS-generated files
 .DS_Store

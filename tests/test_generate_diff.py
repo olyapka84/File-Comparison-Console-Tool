@@ -1,4 +1,4 @@
-from gendiff.gendiff import generate_diff
+from gendiff.scripts.gendiff import generate_diff
 
 
 def run_test(file1, file2, expected_file, format_):
