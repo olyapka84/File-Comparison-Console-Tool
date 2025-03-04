@@ -1,5 +1,5 @@
-{
-    "common": {
+[
+    {
         "key": "common",
         "type": "nested",
         "children": [
@@ -66,7 +66,7 @@
             }
         ]
     },
-    "group1": {
+    {
         "key": "group1",
         "type": "nested",
         "children": [
@@ -91,7 +91,7 @@
             }
         ]
     },
-    "group2": {
+    {
         "key": "group2",
         "type": "removed",
         "value": {
@@ -101,7 +101,7 @@
             }
         }
     },
-    "group3": {
+    {
         "key": "group3",
         "type": "added",
         "value": {
@@ -113,4 +113,4 @@
             "fee": 100500
         }
     }
-}
+]

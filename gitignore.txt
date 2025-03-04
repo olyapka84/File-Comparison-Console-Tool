@@ -1,8 +1,56 @@
-*.egg-info
-__pycache__
-dist/
+# Python
 *.pyc
-.venv
+__pycache__/
+*.pyo
+*.pyd
+*.egg-info/
+*.so
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Build artifacts
+dist/
+build/
+*.egg
+*.manifest
+*.spec
+
+# Logs and debug files
+logs/
+*.log
+*.out
+*.err
+
+# Coverage reports
 .coverage
+.coverage.*
+htmlcov/
 coverage.xml
-*_cache/
+
+# Test cache and artifacts
+.pytest_cache/
+.tox/
+noxfile.py
+nox/
+hypothesis/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Poetry and Pip files (if you don't want to track lock files)
+poetry.lock
+pip-log.txt
+
+# Cast recording file
+demo.cast
