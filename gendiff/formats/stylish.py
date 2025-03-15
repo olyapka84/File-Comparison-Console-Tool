@@ -1,3 +1,6 @@
+INDENT = '    '
+
+
 def format_stylish(diff, depth=1):
     return '\n'.join(process_diff(diff, depth))
 
@@ -29,8 +32,9 @@ def format_node(item, depth, indent):
 
 def format_value(value, depth):
     if isinstance(value, dict):
-        indent = ' ' * (depth * 4)
-        formatted = '\n'.join(f"{indent}    {k}: {format_value(v, depth + 1)}"
+        indent = INDENT * (depth * 4)
+        formatted = '\n'.join(f"{indent}{INDENT}{k}: "
+                              f"{format_value(v, depth + 1)}"
                               for k, v in value.items())
         return f"{{\n{formatted}\n{indent}}}"
     if value is None:
@@ -39,4 +43,4 @@ def format_value(value, depth):
 
 
 def get_indent(depth):
-    return ' ' * (depth * 4 - 2)
+    return INDENT * (depth * 4 - 2)
