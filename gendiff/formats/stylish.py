@@ -32,7 +32,7 @@ def format_node(item, depth, indent):
 
 def format_value(value, depth):
     if isinstance(value, dict):
-        indent = INDENT * (depth * 4)
+        indent = ' ' * (depth * 4)
         formatted = '\n'.join(f"{indent}{INDENT}{k}: "
                               f"{format_value(v, depth + 1)}"
                               for k, v in value.items())
@@ -43,4 +43,4 @@ def format_value(value, depth):
 
 
 def get_indent(depth):
-    return INDENT * (depth * 4 - 2)
+    return ' ' * (depth * 4 - 2)
