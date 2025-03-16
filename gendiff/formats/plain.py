@@ -29,9 +29,7 @@ def stringify_value(value):
             return "[complex value]"
         case None:
             return "null"
-        case bool():
+        case bool() | int():
             return str(value).lower()
-        case int():
-            return str(value)
         case _:
             return f"'{value}'"
