@@ -27,8 +27,10 @@ def format_node(item, depth, indent):
         case 'unchanged':
             return f"{indent}  {key}: {format_value(item['value'], depth)}"
         case 'changed':
-            return (f"{indent}- {key}: {format_value(item['old_value'], depth)}\n"
-                    f"{indent}+ {key}: {format_value(item['new_value'], depth)}")
+            return (f"{indent}- {key}: "
+                    f"{format_value(item['old_value'], depth)}\n"
+                    f"{indent}+ {key}: "
+                    f"{format_value(item['new_value'], depth)}")
 
 
 def format_value(value, depth):
