@@ -2,44 +2,37 @@ INDENT = '    '
 
 
 def format_stylish(diff, depth=1):
-    return '\n'.join(build_stylish_diff(diff, depth))
-
-
-def build_stylish_diff(diff, depth):
-    result = []
     indent = calculate_indent(depth)
+    result = []
+
     for item in diff:
-        result.append(format_diff_entry(item, depth, indent))
-    return result
+        key = item['key']
+        type_ = item['type']
 
+        match type_:
+            case 'nested':
+                children = format_stylish(item['children'], depth + 1)
+                result.append(f"{indent}  {key}: {{\n{children}\n{indent}  }}")
+            case 'added':
+                result.append(f"{indent}+ {key}: {stringify_value(item['value'], depth)}")
+            case 'removed':
+                result.append(f"{indent}- {key}: {stringify_value(item['value'], depth)}")
+            case 'unchanged':
+                result.append(f"{indent}  {key}: {stringify_value(item['value'], depth)}")
+            case 'changed':
+                result.append(f"{indent}- {key}: {stringify_value(item['old_value'], depth)}")
+                result.append(f"{indent}+ {key}: {stringify_value(item['new_value'], depth)}")
 
-def format_diff_entry(item, depth, indent):
-    key = item['key']
-    type_ = item['type']
-    match type_:
-        case 'nested':
-            children = '\n'.join(build_stylish_diff(item['children'],
-                                                    depth + 1))
-            return f"{indent}  {key}: {{\n{children}\n{indent}  }}"
-        case 'added':
-            return f"{indent}+ {key}: {stringify_value(item['value'], depth)}"
-        case 'removed':
-            return f"{indent}- {key}: {stringify_value(item['value'], depth)}"
-        case 'unchanged':
-            return f"{indent}  {key}: {stringify_value(item['value'], depth)}"
-        case 'changed':
-            return (f"{indent}- {key}: "
-                    f"{stringify_value(item['old_value'], depth)}\n"
-                    f"{indent}+ {key}: "
-                    f"{stringify_value(item['new_value'], depth)}")
+    return '\n'.join(result)
 
 
 def stringify_value(value, depth):
     if isinstance(value, dict):
         indent = ' ' * (depth * 4)
-        formatted = '\n'.join(f"{indent}{INDENT}{k}: "
-                              f"{stringify_value(v, depth + 1)}"
-                              for k, v in value.items())
+        formatted = '\n'.join(
+            f"{indent}{INDENT}{k}: {stringify_value(v, depth + 1)}"
+            for k, v in value.items()
+        )
         return f"{{\n{formatted}\n{indent}}}"
     if value is None:
         return "null"
