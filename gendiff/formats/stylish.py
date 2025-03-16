@@ -16,18 +16,19 @@ def process_diff(diff, depth):
 def format_node(item, depth, indent):
     key = item['key']
     type_ = item['type']
-    if type_ == 'nested':
-        children = '\n'.join(process_diff(item['children'], depth + 1))
-        return f"{indent}  {key}: {{\n{children}\n{indent}  }}"
-    if type_ == 'added':
-        return f"{indent}+ {key}: {format_value(item['value'], depth)}"
-    if type_ == 'removed':
-        return f"{indent}- {key}: {format_value(item['value'], depth)}"
-    if type_ == 'unchanged':
-        return f"{indent}  {key}: {format_value(item['value'], depth)}"
-    if type_ == 'changed':
-        return (f"{indent}- {key}: {format_value(item['old_value'], depth)}\n"
-                f"{indent}+ {key}: {format_value(item['new_value'], depth)}")
+    match type_:
+        case 'nested':
+            children = '\n'.join(process_diff(item['children'], depth + 1))
+            return f"{indent}  {key}: {{\n{children}\n{indent}  }}"
+        case 'added':
+            return f"{indent}+ {key}: {format_value(item['value'], depth)}"
+        case 'removed':
+            return f"{indent}- {key}: {format_value(item['value'], depth)}"
+        case 'unchanged':
+            return f"{indent}  {key}: {format_value(item['value'], depth)}"
+        case 'changed':
+            return (f"{indent}- {key}: {format_value(item['old_value'], depth)}\n"
+                    f"{indent}+ {key}: {format_value(item['new_value'], depth)}")
 
 
 def format_value(value, depth):
