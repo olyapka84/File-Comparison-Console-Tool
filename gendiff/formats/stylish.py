@@ -1,7 +1,7 @@
 INDENT = '    '
 
 
-def format_stylish(diff, depth=1):
+def build_stylish_output(diff, depth=1):
     indent = calculate_indent(depth)
     result = []
 
@@ -11,7 +11,7 @@ def format_stylish(diff, depth=1):
 
         match type_:
             case 'nested':
-                children = format_stylish(item['children'], depth + 1)
+                children = build_stylish_output(item['children'], depth + 1)
                 result.append(f"{indent}  {key}: {{\n{children}\n{indent}  }}")
             case 'added':
                 result.append(f"{indent}+ {key}: {stringify_value(item['value'], depth)}")

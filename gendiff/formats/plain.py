@@ -1,4 +1,4 @@
-def format_plain(diff, path=""):
+def build_plain_output(diff, path=""):
     result = []
 
     for item in diff:
@@ -6,32 +6,30 @@ def format_plain(diff, path=""):
         type_ = item['type']
         full_path = f"{path}.{key}" if path else key
 
-        if type_ == 'nested':
-            children = format_plain(item['children'], full_path)
-            result.append(children)
-
-        elif type_ == 'added':
-            result.append(f"Property '{full_path}' was added with value: "
-                          f"{format_value(item['value'])}")
-
-        elif type_ == 'removed':
-            result.append(f"Property '{full_path}' was removed")
-
-        elif type_ == 'changed':
-            result.append(f"Property '{full_path}' was updated. "
-                          f"From {format_value(item['old_value'])} "
-                          f"to {format_value(item['new_value'])}")
+        match type_:
+            case 'nested':
+                children = build_plain_output(item['children'], full_path)
+                result.append(children)
+            case 'added':
+                result.append(f"Property '{full_path}' was added with value: "
+                              f"{stringify_plain_value(item['value'])}")
+            case 'removed':
+                result.append(f"Property '{full_path}' was removed")
+            case 'changed':
+                result.append(f"Property '{full_path}' was updated. "
+                              f"From {stringify_plain_value(item['old_value'])} "
+                              f"to {stringify_plain_value(item['new_value'])}")
 
     return '\n'.join(result)
 
 
-def format_value(value):
-    if isinstance(value, dict):
-        return "[complex value]"
-    if value is None:
-        return "null"
-    if isinstance(value, bool):
-        return str(value).lower()
-    if isinstance(value, (int, float)):
-        return value
-    return f"'{value}'"
+def stringify_plain_value(value):
+    match value:
+        case dict():
+            return "[complex value]"
+        case None:
+            return "null"
+        case bool():
+            return str(value).lower()
+        case _:
+            return f"'{value}'"
