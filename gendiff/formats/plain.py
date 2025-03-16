@@ -31,5 +31,7 @@ def stringify_value(value):
             return "null"
         case bool():
             return str(value).lower()
+        case int():
+            return str(value)
         case _:
             return f"'{value}'"
