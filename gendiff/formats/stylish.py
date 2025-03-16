@@ -14,14 +14,19 @@ def build_stylish_output(diff, depth=1):
                 children = build_stylish_output(item['children'], depth + 1)
                 result.append(f"{indent}  {key}: {{\n{children}\n{indent}  }}")
             case 'added':
-                result.append(f"{indent}+ {key}: {stringify_value(item['value'], depth)}")
+                result.append(f"{indent}+ {key}: "
+                              f"{stringify_value(item['value'], depth)}")
             case 'removed':
-                result.append(f"{indent}- {key}: {stringify_value(item['value'], depth)}")
+                result.append(f"{indent}- {key}: "
+                              f"{stringify_value(item['value'], depth)}")
             case 'unchanged':
-                result.append(f"{indent}  {key}: {stringify_value(item['value'], depth)}")
+                result.append(f"{indent}  {key}: "
+                              f"{stringify_value(item['value'], depth)}")
             case 'changed':
-                result.append(f"{indent}- {key}: {stringify_value(item['old_value'], depth)}")
-                result.append(f"{indent}+ {key}: {stringify_value(item['new_value'], depth)}")
+                result.append(f"{indent}- {key}: "
+                              f"{stringify_value(item['old_value'], depth)}")
+                result.append(f"{indent}+ {key}: "
+                              f"{stringify_value(item['new_value'], depth)}")
 
     return '\n'.join(result)
 
