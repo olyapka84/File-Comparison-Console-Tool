@@ -19,7 +19,6 @@ def build_plain_output(diff, path=""):
                 result.append(f"Property '{full_path}' was updated. "
                               f"From {stringify_value(item['old_value'])} "
                               f"to {stringify_value(item['new_value'])}")
-
     return '\n'.join(result)
 
 
