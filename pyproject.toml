@@ -1,6 +1,6 @@
 [project]
 authors = [
-    {name = "Olga Akukina", email = "olyapa@gmail.com"},
+    {name = "Olga Akukin", email = "olyapa@gmail.com"},
 ]
 name = "hexlet-code"
 version = "0.1.0"
