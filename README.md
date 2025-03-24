@@ -7,7 +7,7 @@
 
 ## Description
 
-Hi! This is another project in my Python learning journey. This application is a **file comparison console tool** that identifies differences between two configuration files and displays them in a visually clear format. 
+Hi! This is another project in my Python learning journey. This application is a **file comparison console tool** that identifies differences between 2 configuration files and displays them in a visually clear format. 
 
 ## Stack:
 
