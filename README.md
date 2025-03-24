@@ -11,7 +11,7 @@ Hi! This is another project in my Python learning journey. This application is a
 
 ## Stack:
 
-- Python
+- Python 3
 - uv
 - Pytest
 
