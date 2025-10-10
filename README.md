@@ -3,8 +3,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f0618576d8712cb54dbc/maintainability)](https://codeclimate.com/github/Olyapka84/python-project-49/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/29efa26f9a5d179835d0/test_coverage)](https://codeclimate.com/github/Olyapka84/python-project-50/test_coverage)
-
 ## Description
 
 Hi! This is another project in my Python learning journey. This application is a **file comparison console tool** that identifies differences between 2 configuration files and displays them in a visually clear format. 
