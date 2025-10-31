@@ -45,7 +45,7 @@ Hi! This is another project in my Python learning journey. This application is a
 
     - Using SSH:
       ```bash
-      git clone https://github.com/Olyapka84/File-Comparison-Console-Tool.git
+      git clone git@github.com:Olyapka84/File-Comparison-Console-Tool.git
       ```
 
     Navigate to the project directory:
