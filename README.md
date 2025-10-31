@@ -40,17 +40,17 @@ Hi! This is another project in my Python learning journey. This application is a
 
     - Using HTTPS:
       ```bash
-      git clone https://github.com/Olyapka84/python-project-50.git
+      git clone https://github.com/Olyapka84/File-Comparison-Console-Tool.git
       ```
 
     - Using SSH:
       ```bash
-      git clone git@github.com:Olyapka84/python-project-50.git
+      git clone https://github.com/Olyapka84/File-Comparison-Console-Tool.git
       ```
 
     Navigate to the project directory:
     ```bash
-    cd python-project-50
+    cd File-Comparison-Console-Tool
     ```
 
 2. **Install the app** in one command using Makefile:
